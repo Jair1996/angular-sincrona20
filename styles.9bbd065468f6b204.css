@@ -1,0 +1,1 @@
+.fade-in{animation:fade-in 2s cubic-bezier(.39,.575,.565,1) both}@keyframes fade-in{0%{opacity:0}to{opacity:1}}
