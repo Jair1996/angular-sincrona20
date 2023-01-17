@@ -2,5 +2,8 @@
   <img [src]="user?.img" class="card-img-top" width="214" height="214" alt="..." />
   <div class="card-body">
     <h5 class="card-title">{{ user?.name }}</h5>
+    <div class="mt-4">
+      <button [routerLink]="['detail', user?.id]" class="btn btn-primary">Ver más</button>
+    </div>
   </div>
 </div>

@@ -13,12 +13,21 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
+  getUser(id: number): Observable<User> {
+    return this.http.get<User>(`${this.url}/${id}`).pipe(
+      map((user) => ({
+        ...user,
+        img: `https://xsgames.co/randomusers/assets/avatars/male/${user.id}.jpg`,
+      }))
+    );
+  }
+
   getAllUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.url).pipe(
       map((user) => {
         return user.map((u, i) => ({
           ...u,
-          img: `https://xsgames.co/randomusers/assets/avatars/male/${i}.jpg`,
+          img: `https://xsgames.co/randomusers/assets/avatars/male/${i + 1}.jpg`,
         }));
       })
     );
