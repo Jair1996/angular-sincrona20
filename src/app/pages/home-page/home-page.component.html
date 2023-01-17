@@ -1,0 +1,9 @@
+<h1>Usuarios</h1>
+<hr />
+<div class="my-5">
+  <button *ngIf="!showUserList" (click)="getUsers()" class="btn btn-primary">Mostrar Usuarios</button>
+  <button *ngIf="showUserList" (click)="hiddenUsers()" class="btn btn-warning">Ocultar Usuarios</button>
+</div>
+<div *ngIf="showUserList">
+  <app-card-user-list></app-card-user-list>
+</div>
